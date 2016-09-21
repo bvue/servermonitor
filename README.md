@@ -13,7 +13,7 @@ I currently support many servers at my job. It would be very useful to have an a
 ### Design
 
 * [Screen Design login page](images/login.jpg)
-* [Screen Design server monitoe page](images/serverMonitor_page.jpg)
+* [Screen Design server monitor page](images/serverMonitor_page.jpg)
 * [Application Flow]
 * [Database Design]
 
