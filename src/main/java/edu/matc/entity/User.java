@@ -12,7 +12,7 @@ import javax.persistence.*;
  * @author bvue
  */
 @Entity
-@Table(name = "users")
+@Table(name = "operdefn")
 public class User {
 
     @Id
@@ -41,6 +41,7 @@ public class User {
      * @param password    password
      */
     public User(int personid, String firstName, String lastName, String userid, String password) {
+        this.personid = personid;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userid = userid;
