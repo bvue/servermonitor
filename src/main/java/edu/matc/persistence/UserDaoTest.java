@@ -38,18 +38,19 @@ public class UserDaoTest {
 
     @Test
     public void addUser() throws Exception {
-        User user = dao.addUser();
+        //User user = dao.addUser();
     }
 
     @Test
     public void deleteUser() throws Exception {
-        //TODO test the delete
+        User user = dao.deleteUser(1);
+        assertNull(user);
     }
 
     @Test
     public void updateUser() throws Exception {
+        //User user = dao.updateUser();
 
-        //TODO test the update
 
     }
 

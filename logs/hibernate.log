@@ -6,3 +6,5 @@
 2016-09-22 18:58:21,678 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2016-09-22 18:59:25,386 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
 2016-09-22 19:06:57,233 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-09-22 19:13:35,582 0    [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-09-22 19:13:36,923 1341 [main] ERROR edu.matc.persistence.UserDao  - org.hibernate.MappingException: Unknown entity: java.lang.Integer

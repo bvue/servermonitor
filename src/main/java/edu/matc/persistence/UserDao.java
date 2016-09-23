@@ -9,8 +9,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,23 +82,24 @@ public class UserDao {
     }
 
     /**
-     * delete a user by id
-     * @param id the user's id
+     * delete a user by personid
+     * @param personid the user's id
      */
-    public void deleteUser(int id) {
+    public User deleteUser(int personid) {
         Session session = getSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            session.delete(id);
+            session.delete(personid);
             tx.commit();
-            log.debug("Deleted: " + id);
+            log.debug("Deleted: " + personid);
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             log.error(e);
         } finally {
             session.close();
         }
+        return null;
     }
 
 
