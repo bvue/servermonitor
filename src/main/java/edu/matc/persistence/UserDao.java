@@ -34,12 +34,12 @@ public class UserDao {
 
     /** Get a single user for the given id
      *
-     * @param id user's id
+     * @param personid user's id
      * @return User
      */
-    public User getUser(int id) {
+    public User getUser(int personid) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        User user = (User) session.get(User.class, id);
+        User user = (User) session.get(User.class, personid);
         return user;
     }
 

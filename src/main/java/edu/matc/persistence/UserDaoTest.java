@@ -30,12 +30,15 @@ public class UserDaoTest {
 
     @Test
     public void getUser() throws Exception {
-        //TODO test the getUser Methods
+        User user = dao.getUser(1);
+        String expectedUserValue = "This is the wrong value. Show me the correct value.";
+        //This WILL fail but I want to see if it grabs the correct user
+        assertEquals("Request: ", expectedUserValue, user);
     }
 
     @Test
     public void addUser() throws Exception {
-        // TODO test the addUser Method
+        User user = dao.addUser();
     }
 
     @Test
