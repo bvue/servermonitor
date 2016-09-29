@@ -11,43 +11,51 @@
     <schema id="7" name="world" />
     <table id="8" parent="1" name="operdefn" />
     <table id="9" parent="1" name="users" />
-    <column id="10" parent="8" name="personid">
+    <table id="10" parent="1" name="user_roles" />
+    <column id="11" parent="8" name="personid">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="11" parent="8" name="lastname">
+    <column id="12" parent="8" name="lastname">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="12" parent="8" name="firstname">
+    <column id="13" parent="8" name="firstname">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="13" parent="8" name="userid">
+    <column id="14" parent="8" name="userid">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="14" parent="8" name="password">
+    <column id="15" parent="8" name="password">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <key id="15" parent="8" name="PRIMARY">
+    <key id="16" parent="8" name="PRIMARY">
       <columns>personid</columns>
       <primary>1</primary>
     </key>
-    <column id="16" parent="9" name="id">
+    <column id="17" parent="9" name="user_name">
       <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-      <sequence-identity>1</sequence-identity>
+      <data-type>varchar(15)|0</data-type>
     </column>
-    <column id="17" parent="9" name="first_name">
-      <data-type>varchar(25)|0</data-type>
+    <column id="18" parent="9" name="user_pass">
+      <mandatory>1</mandatory>
+      <data-type>varchar(15)|0</data-type>
     </column>
-    <column id="18" parent="9" name="last_name">
-      <data-type>varchar(30)|0</data-type>
+    <key id="19" parent="9" name="PRIMARY">
+      <columns>user_name</columns>
+      <primary>1</primary>
+    </key>
+    <column id="20" parent="10" name="user_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(15)|0</data-type>
     </column>
-    <column id="19" parent="9" name="date_of_birth">
-      <data-type>date|0</data-type>
+    <column id="21" parent="10" name="role_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(15)|0</data-type>
     </column>
-    <key id="20" parent="9" name="PRIMARY">
-      <columns>id</columns>
+    <key id="22" parent="10" name="PRIMARY">
+      <columns>user_name
+role_name</columns>
       <primary>1</primary>
     </key>
   </database-model>
