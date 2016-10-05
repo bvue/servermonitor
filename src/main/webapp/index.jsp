@@ -1,27 +1,24 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
 <!DOCTYPE html>
 <html>
-
-<c:set var="pageTitle" value="HomePage" scope="request" />
-
-<c:import url="head-tag.jsp" />
 
 
 
   <body>
     <div id="container">
-      <!-- header -->
-
-        <c:import url="header.jsp" />
 
       <!-- main -->
-      <div id="main">
-        <c:import url="content-home.jsp" />
-      </div><!-- end main -->
 
-        <c:import url="footer.jsp" />
+      <FORM ACTION="j_security_check" METHOD="POST">
+        <TABLE>
+          <TR><TD>User name: <INPUT TYPE="TEXT" NAME="j_username">
+          <TR><TD>Password: <INPUT TYPE="PASSWORD" NAME="j_password">
+          <TR><TH><INPUT TYPE="SUBMIT" VALUE="Log In">
+        </TABLE>
+      </FORM>
+
+      <!-- end main -->
+
+
 
       </div>
   </body>
