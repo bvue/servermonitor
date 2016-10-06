@@ -13,7 +13,7 @@
 <body>
 
     <div>
-        You entered an invalid username or password. Please <a href="index.jsp">try again</a>!
+        You entered an invalid admin username or password. Please <a href="index.jsp">try again</a>!
     </div>
 
 
