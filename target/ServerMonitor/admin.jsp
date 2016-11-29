@@ -10,23 +10,73 @@
 
 
 <body>
-<div id="container">
+    <div id="container">
+
+        <!-- main -->
+
+        <!-- First Container -->
+        <div class="container-fluid bg-1 text-center">
+            <!-- Navbar -->
+            <nav class="navbar navbar-default">
+               <div class="container">
+                   <div class="collapse navbar-collapse" id="myNavbar">
+                   <ul class="nav navbar-nav navbar-right">
+                       <li><a href="#">My Account</a></li>
+                   </ul>
+               </div>
+               </div>
+            </nav>
 
 
-    <!-- header -->
+           <!-- Image -->
+            <h2 class="margin">Server Monitor</h2>
+        </div>
 
-    <c:import url="header.jsp" />
+        <!-- Second Container -->
+        <div class="container-fluid bg-2 text-center">
+            <table class = "table table-striped">
 
-    <!-- main -->
-    <div id="main">
+                <thead>
+                <tr>
+                    <th>Server Name</th>
+                    <th>IP address</th>
+                    <th>Server on/off</th>
+                    <th>Services Running</th>
+                    <th>Memory Used</th>
+                </tr>
+                </thead>
 
-        ADMIN PAGE
+                <tbody>
+                <tr>
+                    <td>Tanmay</td>
+                    <td>Bangalore</td>
+                    <td>560001</td>
+                    <td>serf</td>
+                    <td>sdcf</td>
+                </tr>
 
-        <c:import url="content-home.jsp" />
-    </div><!-- end main -->
+                <tr>
+                    <td>Sachin</td>
+                    <td>Mumbai</td>
+                    <td>400003</td>
+                    <td>sdpkfsdk</td>
+                    <td>odfhgsh</td>
+                </tr>
 
-    <!--  -->
+                <tr>
+                    <td>Uma</td>
+                    <td>Pune</td>
+                    <td>411027</td>
+                    <td>ldfjnskj</td>
+                    <td>flkjvsn</td>
+                </tr>
+                </tbody>
 
-</div>
+            </table>
+        </div>
+
+
+
+    </div>
 </body>
 </html>
