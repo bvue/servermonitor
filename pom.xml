@@ -75,7 +75,18 @@
     </dependency>
 
 
+    <dependency>
+      <groupId>com.jcraft</groupId>
+      <artifactId>jsch</artifactId>
+      <version>0.1.53</version>
+    </dependency>
 
+    <dependency>
+      <groupId>com.jcraft</groupId>
+      <artifactId>jzlib</artifactId>
+      <version>1.0.7</version>
+      <optional>true</optional>
+    </dependency>
 
   </dependencies>
   <build>
