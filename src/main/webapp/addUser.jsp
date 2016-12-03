@@ -33,7 +33,7 @@
         <div class="form-group">
             <label  class="control-label col-sm-2" for="userName">User Name</label>
             <div class="col-sm-4">
-                <input type="user_name" class="form-control" id="userName"
+                <input type="text" class="form-control" id="userName"
                        name="userName"
                        data-error="Please enter your user name." required>
             </div>
@@ -56,7 +56,7 @@
                 Password</label>
             <div class="col-sm-4">
                 <input type="password" class="form-control" id="confirmPassword"
-                       name="confirmPassword" equalTo="#pwd"
+                       name="confirmPassword" equalTo="#password1"
                        data-match="#pwd"
                        data-match-error="Confirmation password does not match"
                        required data-error="Please retype your password.">

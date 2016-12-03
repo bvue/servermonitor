@@ -6,4 +6,15 @@
 | 9/7/16 | Worked on exercises, starting project repository, thinking of extracirricular presentaion   |  10  |   | 
 | 9/14/16 | Hibernate/DAO exercise added into project |  4 |   | 
 | 9/21/16 | Finished up the exercise. Need to finish tests. Completed the peer code review  | 3  |   | 
-| 9/28/16 |   |  |   | 
+| 10/5/16 |   |  |   | 
+| 10/12/16 |   |  |   | 
+| 10/19/16 |   |  |   | 
+| 10/26/16 |   |  |   | 
+| 11/2/16 |   |  |   | 
+| 11/9/16 |   |  |   | 
+| 11/16/16 |   |  |   | 
+| 11/23/16 |   |  |   | 
+| 11/30/16 |   |  |   | 
+| 12/7/16 |   |  |   | 
+| 12/14/16 |   |  |   | 
+
