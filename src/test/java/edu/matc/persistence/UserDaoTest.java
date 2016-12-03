@@ -47,12 +47,24 @@ public class UserDaoTest {
 
     @Test
     public void addUser() throws Exception {
-        //User user = dao.addUser();
+        UserDao dao = new UserDao();
+        int insertedUserId = 0;
+        //create user to add
+        User user = new User();
+        user.setFirstName("test");
+        user.setLastName("test");
+        user.setUserid("test");
+        user.setPassword("test");
+
+        insertedUserId = dao.addUser(user);
+
+        assertTrue(insertedUserId > 0);
+        dao.deleteUser(user.getPersonid());
     }
 
     @Test
     public void deleteUser() throws Exception {
-        User user = dao.deleteUser(1);
+        User user = dao.deleteUser(6);
         assertNull(user);
     }
 

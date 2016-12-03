@@ -90,7 +90,8 @@ public class UserDao {
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            session.delete(personid);
+            User user = (User)session.get(User.class, personid);
+            session.delete(user);
             tx.commit();
             log.debug("Deleted: " + personid);
         } catch (HibernateException e) {
