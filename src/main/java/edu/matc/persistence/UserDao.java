@@ -30,6 +30,7 @@ public class UserDao {
         return users;
     }
 
+
     /** Get a single user for the given id
      *
      * @param personid user's id
@@ -63,12 +64,13 @@ public class UserDao {
      * @return the id of the inserted record
      */
     public int addUser(User user) {
-
+        UserRoleDao addUserRole = new UserRoleDao();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
         Integer userId = null;
         try {
             tx = session.beginTransaction();
+            addUserRole.addUserRole(user.getUserid());
             userId = (Integer) session.save(user);
             tx.commit();
             log.info("Added user: " + user + " with id of: " + userId);
@@ -80,6 +82,7 @@ public class UserDao {
         }
         return userId;
     }
+
 
     /**
      * delete a user by personid

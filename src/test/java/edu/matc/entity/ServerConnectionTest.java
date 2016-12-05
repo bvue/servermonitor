@@ -11,6 +11,7 @@ public class ServerConnectionTest {
 
     @Test
     public void testGetRemoteServerConnection() throws Exception {
+        ServerConnection serverConnection = new ServerConnection();
 
     }
 

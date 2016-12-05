@@ -12,5 +12,15 @@
       <introspection-scope>sample:</introspection-scope>
       <resolve-scope>sample:</resolve-scope>
     </data-source>
+    <data-source name="hibernate.cfg.xml/Hibernate" uuid="e9e41f12-d779-461f-9cdb-e6bf07fd7790">
+      <database-info product="MySQL" version="5.7.14-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <user-name>root</user-name>
+      <user-password>dfebdfdadfdadfc6dfcfdfdedfc5dfc4df93df98df9a</user-password>
+      <resolve-scope>sample:</resolve-scope>
+    </data-source>
   </component>
 </project>

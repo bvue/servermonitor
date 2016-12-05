@@ -1,10 +1,12 @@
 package edu.matc.entity;
 
 import com.jcraft.jsch.*;
+import com.mysql.fabric.Server;
 import org.apache.log4j.Logger;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 
 /**
@@ -12,32 +14,52 @@ import java.util.List;
  */
 public class ServerConnection {
 
+    private List<String> result = new ArrayList<String>();
     private final Logger logger = Logger.getLogger(this.getClass());
+    private Properties properties;
+    //static Logger logger = Logger.getLogger(ServerConnection.class.getName());
 
-    public void getRemoteServerConnection() {
-
-
-        String USERNAME = "root"; // username for remote host
-        String PASSWORD = "Appleton920"; // password of the remote host
-        String host = "67.205.162.127"; // remote host address
-        int port = 22;
-
-        /**
-         * This method will execute the script file on the server.
-         * This takes file name to be executed as an argument
-         * The result will be returned in the form of the list
-         */
-
-        List<String> result = new ArrayList<String>();
-        String command = "ps ux";
-
+    //get properties info
+    public void loadProperties(String propertiesFilePath)  {
+        properties = new Properties();
         try {
+            properties.load(this.getClass().getResourceAsStream(propertiesFilePath));
+        } catch(IOException ioException) {
+            ioException.printStackTrace();
+        } catch(Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    //public void getRemoteServerConnection() {
+    //public static void main(String[] args) {
+
+
+        public List getTaskList() {
+
+            loadProperties("serverConnection.properties");
+
+            String username = properties.getProperty("username");
+            String password = properties.getProperty("password");
+            String host = properties.getProperty("host");
+            int port = Integer.parseInt(properties.getProperty("port"));
+
 
             /**
-             * Create a new Jsch object
-             * This object will execute shell commands or scripts on server
+             * This method will execute the script file on the server.
+             * This takes file name to be executed as an argument
+             * The result will be returned in the form of the list
              */
-            JSch jsch = new JSch();
+
+            String command = "ps ux";
+
+            try {
+
+                /**
+                 * Create a new Jsch object
+                 * This object will execute shell commands or scripts on server
+                 */
+                JSch jsch = new JSch();
 
          /*
          * Open a new session, with your username, host and port
@@ -46,98 +68,67 @@ public class ServerConnection {
          * Once the connection is established, you can initiate a new channel.
          * this channel is needed to connect to remotely execution program
          */
-            Session session = jsch.getSession(USERNAME, host, port);
-            session.setConfig("StrictHostKeyChecking", "no");
-            session.setPassword(PASSWORD);
-            session.connect();
-            //logger.info("Connection established.");
+                Session session = jsch.getSession(username, host, port);
+                session.setConfig("StrictHostKeyChecking", "no");
+                session.setPassword(password);
+                session.connect();
+                logger.info("Connection established.");
 
-            //create the excution channel over the session
-            Channel channelExec = session.openChannel("exec");
+                //create the excution channel over the session
+                Channel channelExec = session.openChannel("exec");
 
-            ((ChannelExec) channelExec).setCommand(command);
-            channelExec.setInputStream(null);
-            ((ChannelExec) channelExec).setErrStream(System.err);
+                ((ChannelExec) channelExec).setCommand(command);
+                channelExec.setInputStream(null);
+                ((ChannelExec) channelExec).setErrStream(System.err);
 
-            // Gets an InputStream for this channel. All data arriving in as messages from the remote side can be read from this stream.
-            InputStream in = channelExec.getInputStream();
+                // Gets an InputStream for this channel. All data arriving in as messages from the remote side can be read from this stream.
+                InputStream in = channelExec.getInputStream();
 
-            // Set the command that you want to execute
-            // In our case its the remote shell script
-            //channelExec.setCommand("ps ux");
+                // Execute the command
+                channelExec.connect();
 
-            // Execute the command
-            channelExec.connect();
+                // Read the output from the input stream we set above
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                String line = "";
 
-            // Read the output from the input stream we set above
-            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-            String line = "";
+                //Read each line from the buffered reader and add it to result list
+                // You can also simple print the result here
+                while ((line = reader.readLine()) != null) {
+                    result.add(line);
+                }
 
-            //Read each line from the buffered reader and add it to result list
-            // You can also simple print the result here
-            while ((line = reader.readLine()) != null) {
-                result.add(line);
+                //retrieve the exit status of the remote command corresponding to this channel
+                int exitStatus = channelExec.getExitStatus();
+
+                //Safely disconnect channel and disconnect session. If not done then it may cause resource leak
+                channelExec.disconnect();
+                session.disconnect();
+
+                if (exitStatus < 0) {
+                    logger.info("Done, but exit status not set!");
+                } else if (exitStatus > 0) {
+                    logger.info("Done, but with error!");
+                } else {
+                    logger.info("Done!");
+                }
+            } catch (Exception e) {
+                logger.error("Error: " + e);
             }
 
-            //retrieve the exit status of the remote command corresponding to this channel
-            int exitStatus = channelExec.getExitStatus();
-
-            //Safely disconnect channel and disconnect session. If not done then it may cause resource leak
-            channelExec.disconnect();
-            session.disconnect();
-
-            if (exitStatus < 0) {
-                System.out.println("Done, but exit status not set!");
-            } else if (exitStatus > 0) {
-                System.out.println("Done, but with error!");
-            } else {
-                System.out.println("Done!");
+            //map this to the controller class and display on JSP page
+            for (String runningTasks : result) {
+                logger.info(runningTasks);
+                //MapController mapResultsToJsp = new MapController();
+                //mapResultsToJsp.getRunningTasks(runningTasks);
             }
 
-        } catch (Exception e) {
-            System.err.println("Error: " + e);
-        }
-        System.out.println(result);
+            return result;
+
     }
 
 
-        /** to read a file
-
-         public void connectToRemoteServer() {
-         String user = "root";
-         String password = "Appleton920";
-         String host = "67.205.162.127";
-         int port=22;
-
-         String remoteFile="/test.txt";
-
-         try {
-         JSch jsch = new JSch();
-         Session session = jsch.getSession(user, host, port);
-         session.setPassword(password);
-         session.setConfig("StrictHostKeyChecking", "no");
-         logger.info("Establishing Connection...");
-         session.connect();
-         logger.info("Connection established.");
-         logger.info("Crating SFTP Channel.");
-         ChannelSftp sftpChannel = (ChannelSftp) session.openChannel("sftp");
-         sftpChannel.connect();
-         logger.info("SFTP Channel created.");
 
 
-         InputStream out= null;
-         out= sftpChannel.get(remoteFile);
-         BufferedReader br = new BufferedReader(new InputStreamReader(out));
-         String line;
-         while ((line = br.readLine()) != null)
-         logger.info(line);
-         br.close();
-         }
-         catch(Exception e){
-         System.err.print(e);
-         }
-         }
-         */
 
 
 }

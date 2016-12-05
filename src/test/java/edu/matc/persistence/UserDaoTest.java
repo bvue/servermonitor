@@ -1,5 +1,7 @@
 package edu.matc.persistence;
 
+import edu.matc.entity.UserRole;
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,6 +27,7 @@ import static org.junit.Assert.*;
 public class UserDaoTest {
 
     UserDao dao;
+    private Logger logger = org.apache.log4j.Logger.getLogger(this.getClass());
 
     @Before
     public void setup() {
@@ -34,8 +37,10 @@ public class UserDaoTest {
     @Test
     public void getAllUsers() throws Exception {
         List<User> users = dao.getAllUsers();
+        logger.info(users);
         assertTrue(users.size() > 0);
     }
+
 
     @Test
     public void getUser() throws Exception {
@@ -61,6 +66,7 @@ public class UserDaoTest {
         assertTrue(insertedUserId > 0);
         dao.deleteUser(user.getPersonid());
     }
+
 
     @Test
     public void deleteUser() throws Exception {

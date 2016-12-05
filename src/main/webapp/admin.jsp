@@ -1,4 +1,6 @@
+<jsp:useBean id="taskList" scope="request" class="edu.matc.entity.MapController"/>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 
 <!DOCTYPE html>
@@ -38,38 +40,32 @@
 
                 <thead>
                 <tr>
-                    <th>Server Name</th>
-                    <th>IP address</th>
-                    <th>Server on/off</th>
-                    <th>Services Running</th>
-                    <th>Memory Used</th>
+                    <th>Server Name</th>        <!--Column 1-->
+                    <th>IP address</th>         <!--Column 2-->
+                    <th>Server on/off</th>      <!--Column 3-->
+                    <th>Services Running</th>   <!--Column 4-->
+                    <th>Memory Used</th>        <!--Column 5-->
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
-                    <td>Tanmay</td>
-                    <td>Bangalore</td>
-                    <td>560001</td>
-                    <td>serf</td>
-                    <td>sdcf</td>
+                    <td>Tanmay</td>                                 <!--Column 1-->
+                    <td>Bangalore</td>                              <!--Column 2-->
+                    <td>560001</td>                                 <!--Column 3-->
+                    <td>${taskList}</td>               <!--Column 4-->
+                    <td>sdcf</td>                                   <!--Column 5-->
                 </tr>
 
                 <tr>
-                    <td>Sachin</td>
-                    <td>Mumbai</td>
-                    <td>400003</td>
-                    <td>sdpkfsdk</td>
-                    <td>odfhgsh</td>
+                    <td>Sachin</td>             <!--Column 1-->
+                    <td>Mumbai</td>             <!--Column 2-->
+                    <td>400003</td>             <!--Column 3-->
+                    <td>sdpkfsdk</td>           <!--Column 4-->
+                    <td>odfhgsh</td>            <!--Column 5-->
                 </tr>
 
-                <tr>
-                    <td>Uma</td>
-                    <td>Pune</td>
-                    <td>411027</td>
-                    <td>ldfjnskj</td>
-                    <td>flkjvsn</td>
-                </tr>
+
                 </tbody>
 
             </table>
