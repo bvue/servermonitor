@@ -9,7 +9,7 @@ import static org.testng.Assert.*;
  */
 public class ServerConnectionTest {
 
-    private Logger logger = Logger.getLogger(this.getClass());
+    private final Logger logger = Logger.getLogger(this.getClass());
     ServerConnection serverConnection = new ServerConnection();
 
     @Test

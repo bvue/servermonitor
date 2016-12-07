@@ -5,47 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83e7c1b8-b453-4bbf-aff7-a31efe965c03" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_javax_mail_api_1_5_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_6_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/javaee_api_5_0_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mail_1_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/matc/entity/SendEmail.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/matc/util/Utilities.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_1_9_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_launcher_1_9_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_beanshell_bsh_2_0b4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_6_9_13_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/edu/matc/entity/MapControllerTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ServerMonitor.war" afterPath="$PROJECT_DIR$/target/ServerMonitor.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ServerMonitor/WEB-INF/classes/edu/matc/persistence/UserDao.class" afterPath="$PROJECT_DIR$/target/ServerMonitor/WEB-INF/classes/edu/matc/persistence/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ServerMonitor/WEB-INF/lib/ServerMonitor-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/ServerMonitor/WEB-INF/lib/ServerMonitor-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/matc/persistence/UserDao.class" afterPath="$PROJECT_DIR$/target/classes/edu/matc/persistence/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/servermonitor_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/servermonitor_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/c0c8aa76-1cef-4154-8a3d-e6ec09a2ad27.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/c0c8aa76-1cef-4154-8a3d-e6ec09a2ad27.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/e9e41f12-d779-461f-9cdb-e6bf07fd7790.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/e9e41f12-d779-461f-9cdb-e6bf07fd7790.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/servermonitor.iml" afterPath="$PROJECT_DIR$/servermonitor.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/matc/entity/MapController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/matc/entity/MapController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/matc/entity/SendEmail.java" afterPath="$PROJECT_DIR$/src/main/java/edu/matc/entity/SendEmail.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/matc/entity/ServerConnection.java" afterPath="$PROJECT_DIR$/src/main/java/edu/matc/entity/ServerConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/matc/entity/UserRole.java" afterPath="$PROJECT_DIR$/src/main/java/edu/matc/entity/UserRole.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/matc/persistence/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/edu/matc/persistence/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/matc/persistence/UserRoleDao.java" afterPath="$PROJECT_DIR$/src/main/java/edu/matc/persistence/UserRoleDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/serverConnection.properties" afterPath="$PROJECT_DIR$/src/main/resources/serverConnection.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/admin.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/edu/matc/entity/ServerConnectionTest.java" afterPath="$PROJECT_DIR$/src/test/java/edu/matc/entity/ServerConnectionTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/edu/matc/persistence/UserDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/edu/matc/persistence/UserDaoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/edu/matc/persistence/UserRoleDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/edu/matc/persistence/UserRoleDaoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ServerMonitor/META-INF/maven/edu.matc.servermonitor/ServerMonitor/pom.properties" afterPath="$PROJECT_DIR$/target/ServerMonitor/META-INF/maven/edu.matc.servermonitor/ServerMonitor/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ServerMonitor/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/ServerMonitor/WEB-INF/classes/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ServerMonitor/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/ServerMonitor/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ServerMonitor/admin.jsp" afterPath="$PROJECT_DIR$/target/ServerMonitor/admin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="servermonitor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,7 +59,7 @@
       <file leaf-file-name="admin.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/admin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
+            <state relative-caret-position="1287">
               <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
               <folding />
             </state>
@@ -105,8 +69,8 @@
       <file leaf-file-name="SendEmail.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/entity/SendEmail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1017">
-              <caret line="40" column="63" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
+            <state relative-caret-position="1871">
+              <caret line="65" column="55" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="Utilities.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/util/Utilities.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+            <state relative-caret-position="363">
+              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -129,31 +93,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1947">
               <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1221">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerConnectionTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/edu/matc/entity/ServerConnectionTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -161,8 +101,20 @@
       <file leaf-file-name="ServerConnection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/entity/ServerConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+            <state relative-caret-position="528">
+              <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServerConnectionTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/edu/matc/entity/ServerConnectionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -219,17 +171,17 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/matc/persistence/UserRoleDao.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/matc/persistence/UserRoleDaoTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/matc/persistence/UserDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/matc/util/Utilities.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/matc/entity/Test.java" />
-        <option value="$PROJECT_DIR$/src/test/java/edu/matc/entity/ServerConnectionTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/serverConnection.properties" />
         <option value="$PROJECT_DIR$/src/main/java/edu/matc/entity/Application.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/matc/entity/ServerConnection.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/matc/entity/MapControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/matc/entity/MapController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/serverConnection.properties" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/matc/entity/ServerConnectionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/matc/entity/ServerConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/matc/util/Utilities.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/matc/entity/SendEmail.java" />
       </list>
     </option>
@@ -312,8 +264,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -572,7 +525,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -581,7 +533,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.24022989" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mail-1.4.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/first-rate-games" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
@@ -1296,7 +1248,8 @@
       <workItem from="1480911627215" duration="3321000" />
       <workItem from="1480978487351" duration="4471000" />
       <workItem from="1480983422025" duration="12817000" />
-      <workItem from="1481068131834" duration="3151000" />
+      <workItem from="1481068131834" duration="3213000" />
+      <workItem from="1481073639486" duration="5474000" />
     </task>
     <servers />
   </component>
@@ -1333,7 +1286,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146550000" />
+    <option name="totallyTimeSpent" value="152086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
@@ -1347,8 +1300,8 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13770604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45639187" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1357,8 +1310,8 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30787447" sideWeight="0.8086505" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38365898" sideWeight="0.8086505" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.223209" sideWeight="0.49584776" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23042582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1722,29 +1675,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/serverConnection.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/util/Utilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/entity/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/entity/Application.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/matc/entity/MapControllerTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1287">
+          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/serverConnection.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3333">
+          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1221">
+        <state relative-caret-position="1013">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
@@ -1754,52 +1714,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1947">
           <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/matc/entity/ServerConnectionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="363">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/entity/ServerConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+        <state relative-caret-position="528">
+          <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/util/Utilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/matc/entity/SendEmail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1017">
-          <caret line="40" column="63" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
+        <state relative-caret-position="1871">
+          <caret line="65" column="55" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

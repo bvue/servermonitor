@@ -9,7 +9,7 @@ import java.util.Properties;
 
 import edu.matc.util.*;
 
-import static edu.matc.util.Utilities.loadProperties;
+import static edu.matc.util.Utilities.*;
 
 
 /**
@@ -29,6 +29,7 @@ public class ServerConnection {
     private BufferedReader reader;
     List<String> result = new ArrayList<String>();
     private final Logger logger = Logger.getLogger(this.getClass());
+    private Utilities utils = new Utilities();
 
 
     /**
@@ -37,10 +38,13 @@ public class ServerConnection {
      */
     public List getTaskList() {
 
+        /**
         username = "root";
         password = "java2016";
         host = "67.205.162.127";
         port = 22;
+         */
+
 
         try {
 
@@ -67,7 +71,7 @@ public class ServerConnection {
         return result;
     }
 
-    /**
+
     public void loadProperties() {
 
         Properties properties = Utilities.loadProperties("serverConnection.properties");
@@ -83,7 +87,7 @@ public class ServerConnection {
         //logger.info("Port Number: " + port);
 
     }
-     */
+
 
 
     /**

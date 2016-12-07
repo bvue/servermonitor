@@ -1,12 +1,11 @@
 package edu.matc.entity;
 
 
+import edu.matc.util.Utilities;
+import org.apache.log4j.Logger;
+
 import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -17,43 +16,57 @@ import javax.mail.internet.MimeMessage;
  */
 public class SendEmail {
 
-    static Properties mailServerProperties;
-    static Session getMailSession;
-    static MimeMessage generateMailMessage;
+    private Properties properties;
+    private Session getMailSession;
+    private MimeMessage generateMailMessage;
+    private final Logger logger = Logger.getLogger(SendEmail.class);
 
-    public static void main(String args[]) throws AddressException, MessagingException {
-        generateAndSendEmail();
-        System.out.println("\n\n ===> Your Java Program has just sent an Email successfully. Check your email..");
+
+
+    public void run() throws MessagingException {
+        setup();
+        getMailSession();
+        getSessionAndSendMail();
+        logger.info("***Mail Sent successfully. Verify email!***");
     }
 
-    public static void generateAndSendEmail() throws AddressException, MessagingException {
+    public void setup() throws MessagingException {
 
-        // Step1
-        System.out.println("\n 1st ===> setup Mail Server Properties..");
-        mailServerProperties = System.getProperties();
-        mailServerProperties.put("mail.smtp.port", "587");
-        mailServerProperties.put("mail.smtp.auth", "true");
-        mailServerProperties.put("mail.smtp.starttls.enable", "true");
-        mailServerProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
-        System.out.println("Mail Server Properties have been setup successfully..");
+        logger.info("***Setting up the mail server properties***");
 
-        // Step2
-        System.out.println("\n\n 2nd ===> get Mail Session..");
-        getMailSession = Session.getDefaultInstance(mailServerProperties, null);
+        properties = System.getProperties();
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        //need this to convert socket to TLS
+        properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+
+        logger.info("***Mail Server Properties have been setup successfully***");
+    }
+
+    public void getMailSession() throws MessagingException {
+
+        logger.info("***get mail session***");
+
+        getMailSession = Session.getDefaultInstance(properties, null);
         generateMailMessage = new MimeMessage(getMailSession);
         generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("bvue4550@gmail.com"));
         //generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress("test2@servermonitor.com"));
-        generateMailMessage.setSubject("Please work..");
-        String emailBody = "Test email!!! JavaMail API example. " + "<br><br> Regards, <br>Ceo Vue";
+        generateMailMessage.setSubject("Message From Server Monitor");
+        String emailBody = "Your server is down." + "<br><br> Sincerely, <br>CEO Vue";
         generateMailMessage.setContent(emailBody, "text/html");
-        System.out.println("Mail Session has been created successfully..");
 
-        // Step3
-        System.out.println("\n\n 3rd ===> Get Session and Send mail");
+        logger.info("***Mail Session has been created successfully***");
+
+    }
+
+
+    public void getSessionAndSendMail() throws MessagingException {
+
+        logger.info("***Get Session and Send mail***");
         Transport transport = getMailSession.getTransport("smtp");
 
-        // Enter your correct gmail UserID and Password
-        // if you have 2FA enabled then provide App Specific Password
+        //This is the sending email
         transport.connect("smtp.gmail.com", "bvue4550@gmail.com", "java2016");
         transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
         transport.close();
