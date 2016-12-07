@@ -1,5 +1,6 @@
 package edu.matc.persistence;
 
+import edu.matc.entity.User;
 import edu.matc.entity.UserRole;
 import org.apache.log4j.Logger;
 import org.junit.Before;
@@ -7,6 +8,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.testng.Assert.*;
 
@@ -15,28 +17,28 @@ import static org.testng.Assert.*;
  */
 public class UserRoleDaoTest {
 
-    UserRoleDao dao;
+    UserRoleDao dao = new UserRoleDao();
     private Logger logger = org.apache.log4j.Logger.getLogger(this.getClass());
-
-    @Before
-    public void setup() {
-        dao = new UserRoleDao();
-    }
 
     @Test
     public void testGetAllUsersFromRoleTable() throws Exception {
         List<UserRole> users = dao.getAllUsersFromRoleTable();
-        //logger.info(users);
+        logger.info(users);
         assertTrue(users.size() > 0);
     }
 
     @Test
     public void testAddUserRole() throws Exception {
-        UserDao dao = new UserDao();
         UserRole userRole = new UserRole();
-        userRole.setUserName("myTestUserRoleName");
+        userRole.setUserName("myTestUser");
         userRole.setRoleName("employee");
-        //assertEquals("These match: ", "myTestUserRoleName", userRole.getUserName());
+
+        dao.addUserRole(userRole.getUserName());
     }
 
+    @Test
+    public void testDeleteUser() throws Exception {
+        UserRole user = dao.deleteUserFromRoleTable(5);
+        assertNull(user);
+    }
 }

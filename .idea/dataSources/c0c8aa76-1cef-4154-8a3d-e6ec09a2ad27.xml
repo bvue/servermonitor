@@ -54,22 +54,26 @@
       <mandatory>1</mandatory>
       <data-type>varchar(15)|0</data-type>
     </column>
-    <key id="23" parent="10" name="PRIMARY">
-      <columns>user_name
-role_name</columns>
+    <column id="23" parent="10" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <key id="24" parent="10" name="PRIMARY">
+      <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="24" parent="11" name="name">
+    <column id="25" parent="11" name="name">
       <data-type>varchar(32)|0</data-type>
     </column>
-    <column id="25" parent="11" name="ip">
+    <column id="26" parent="11" name="ip">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="26" parent="11" name="status">
+    <column id="27" parent="11" name="status">
       <data-type>int(11)|0</data-type>
     </column>
-    <key id="27" parent="11" name="PRIMARY">
+    <key id="28" parent="11" name="PRIMARY">
       <columns>ip</columns>
       <primary>1</primary>
     </key>

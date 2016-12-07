@@ -1,7 +1,7 @@
 package edu.matc.entity;
 
-import org.testng.annotations.Test;
-
+import org.apache.log4j.Logger;
+import org.junit.Test;
 import static org.testng.Assert.*;
 
 /**
@@ -9,10 +9,19 @@ import static org.testng.Assert.*;
  */
 public class ServerConnectionTest {
 
+    private Logger logger = Logger.getLogger(this.getClass());
+    ServerConnection serverConnection = new ServerConnection();
+
     @Test
-    public void testGetRemoteServerConnection() throws Exception {
-        ServerConnection serverConnection = new ServerConnection();
+    public void testGetTaskList() throws Exception {
+        serverConnection.getTaskList();
 
     }
+
+
+
+
+
+
 
 }

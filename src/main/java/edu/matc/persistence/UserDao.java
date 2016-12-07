@@ -24,9 +24,10 @@ public class UserDao {
      * @return All users
      */
     public List<User> getAllUsers() {
-        List<User> users = new ArrayList<User>();
+        List<User> users;
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         users = session.createCriteria(User.class).list();
+        session.close();
         return users;
     }
 
@@ -39,6 +40,7 @@ public class UserDao {
     public User getUser(int personid) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         User user = (User) session.get(User.class, personid);
+        session.close();
         return user;
     }
 
@@ -51,6 +53,7 @@ public class UserDao {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(User.class);
         criteria.add(Restrictions.eq("lastName", lastName));
+        session.close();
         return criteria.list();
 
     }
@@ -64,14 +67,15 @@ public class UserDao {
      * @return the id of the inserted record
      */
     public int addUser(User user) {
-        UserRoleDao addUserRole = new UserRoleDao();
+        UserRoleDao userRole = new UserRoleDao();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
         Integer userId = null;
         try {
             tx = session.beginTransaction();
-            addUserRole.addUserRole(user.getUserid());
             userId = (Integer) session.save(user);
+            //add user to user role table
+            userRole.addUserRole(user.getUserid());
             tx.commit();
             log.info("Added user: " + user + " with id of: " + userId);
         } catch (HibernateException e) {
@@ -89,7 +93,7 @@ public class UserDao {
      * @param personid the user's id
      */
     public User deleteUser(int personid) {
-        Session session = getSession();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
@@ -113,7 +117,7 @@ public class UserDao {
      */
 
     public void updateUser(User user) {
-        Session session = getSession();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
@@ -127,10 +131,6 @@ public class UserDao {
             session.close();
         }
 
-    }
-
-    private Session getSession() {
-        return SessionFactoryProvider.getSessionFactory().openSession();
     }
 
 

@@ -56,20 +56,24 @@
       <mandatory>1</mandatory>
       <data-type>varchar(15)|0</data-type>
     </column>
-    <key id="24" parent="10" name="PRIMARY">
-      <columns>user_name
-role_name</columns>
+    <column id="24" parent="10" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <key id="25" parent="10" name="PRIMARY">
+      <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="25" parent="11" name="user_name">
+    <column id="26" parent="11" name="user_name">
       <mandatory>1</mandatory>
       <data-type>varchar(15)|0</data-type>
     </column>
-    <column id="26" parent="11" name="user_pass">
+    <column id="27" parent="11" name="user_pass">
       <mandatory>1</mandatory>
       <data-type>varchar(15)|0</data-type>
     </column>
-    <key id="27" parent="11" name="PRIMARY">
+    <key id="28" parent="11" name="PRIMARY">
       <columns>user_name</columns>
       <primary>1</primary>
     </key>

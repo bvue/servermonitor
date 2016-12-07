@@ -1,4 +1,5 @@
 <jsp:useBean id="taskList" scope="request" class="edu.matc.entity.MapController"/>
+<jsp:useBean id="test" scope="request" class="edu.matc.entity.MapController"/>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
@@ -53,8 +54,8 @@
                     <td>Tanmay</td>                                 <!--Column 1-->
                     <td>Bangalore</td>                              <!--Column 2-->
                     <td>560001</td>                                 <!--Column 3-->
-                    <td>${taskList}</td>               <!--Column 4-->
-                    <td>sdcf</td>                                   <!--Column 5-->
+                    <td><c:out value="${taskList}"/></td>               <!--Column 4-->
+                    <td><c:out value="${test}"/></td>                                   <!--Column 5-->
                 </tr>
 
                 <tr>

@@ -11,10 +11,12 @@ import javax.servlet.annotation.*;
 
 @WebServlet(name = "MapController", urlPatterns = { "/mapcontroller" })
 
-public class MapController {
+public class MapController extends HttpServlet{
 
     private final Logger logger = Logger.getLogger(this.getClass());
-    String tasks = "these are my tasks: ;sodfhoshnv lskdflsdfl osdjvskldlv";
+    String tasks;
+    String nullTasks;
+    List<String> myTaskList;
 
     public void init() throws ServletException {
 
@@ -22,10 +24,17 @@ public class MapController {
 
     /**
     public void getRunningTasks(String myList) {
-        tasks = myList;
-        logger.info(myList);
+
+        if (myList != null) {
+            tasks = myList;
+            //logger.info("Here are the tasks in the Map Controller class: " + tasks);
+        } else {
+            tasks = "Unable to retrieve tasks from server.";
+        }
+
     }
      */
+
 
     /**
      *  Handles HTTP GET requests.
@@ -38,13 +47,26 @@ public class MapController {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        //map tasks onto the JSP page
-        request.setAttribute("taskList", tasks);
+        ServerConnection serverConnection = new ServerConnection();
+        myTaskList = serverConnection.getTaskList();
+        //logger.info("Here are the tasks in the Map Controller class: " + myTaskList);
 
-        String url = "/admin.jsp";
+        if (myTaskList != null) {
+            for (String taskString : myTaskList) {
+                request.setAttribute("taskList", taskString);
+                logger.info("Here are the tasks in the Map Controller class: " + taskString);
+            }
+        } else {
+            nullTasks = "Unable to retrieve tasks from server.";
+            request.setAttribute("taskList", nullTasks);
+        }
 
-        request.getRequestDispatcher(url).forward(request, response);
+        request.setAttribute("test", "my test message will work!");
 
+        String url = "admin.jsp";
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+        dispatcher.forward(request, response);
     }
 
 }

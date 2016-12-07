@@ -1,6 +1,9 @@
 package edu.matc.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
+
 
 
 /**
@@ -9,6 +12,12 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user_roles")
 public class UserRole {
+
+
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    private int id;
 
     @Column(name="user_name")
     private String userName;
@@ -32,6 +41,13 @@ public class UserRole {
         this.roleName = roleName;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUserName() {
         return userName;
@@ -57,4 +73,5 @@ public class UserRole {
                 ", Role Name='" + roleName + '\'' +
                 '}';
     }
+
 }

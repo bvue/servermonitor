@@ -70,7 +70,7 @@ public class UserDaoTest {
 
     @Test
     public void deleteUser() throws Exception {
-        User user = dao.deleteUser(6);
+        User user = dao.deleteUser(5);
         assertNull(user);
     }
 
