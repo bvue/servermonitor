@@ -1,5 +1,3 @@
-<jsp:useBean id="taskList" scope="request" class="edu.matc.entity.MapController"/>
-<jsp:useBean id="test" scope="request" class="edu.matc.entity.MapController"/>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
@@ -37,6 +35,59 @@
 
         <!-- Second Container -->
         <div class="container-fluid bg-2 text-center">
+            <table class="table table-hover table-expandable table-striped">
+                <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Population</th>
+                    <th>Area</th>
+                    <th>Official languages</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>United States of America</td>
+                    <td>306,939,000</td>
+                    <td>9,826,630 km2</td>
+                    <td>English</td>
+                </tr>
+                <tr>
+                    <td colspan="5"><h4>Additional information</h4>
+                        <ul>
+                            <li><a href="http://en.wikipedia.org/wiki/Usa">USA on Wikipedia</a></li>
+                            <li><a href="http://nationalatlas.gov/">National Atlas of the United States</a></li>
+                            <li><a href="http://www.nationalcenter.org/HistoricalDocuments.html">Historical Documents</a></li>
+                        </ul></td>
+                </tr>
+                <tr>
+                    <td>United Kingdom </td>
+                    <td>61,612,300</td>
+                    <td>244,820 km2</td>
+                    <td>English</td>
+                </tr>
+                <tr>
+                    <td colspan="5"><h4>Additional information</h4>
+                        <ul>
+                            <li><a href="http://en.wikipedia.org/wiki/United_kingdom">UK on Wikipedia</a></li>
+                            <li><a href="http://www.visitbritain.com/">Official tourist guide to Britain</a></li>
+                            <li><a href="http://www.statistics.gov.uk/StatBase/Product.asp?vlnk=5703">Official Yearbook of the United Kingdom</a></li>
+                        </ul></td>
+                </tr>
+
+                </tbody>
+            </table>
+
+
+
+
+
+
+
+
+
+
+
+
             <table class = "table table-striped">
 
                 <thead>
@@ -54,8 +105,17 @@
                     <td>Tanmay</td>                                 <!--Column 1-->
                     <td>Bangalore</td>                              <!--Column 2-->
                     <td>560001</td>                                 <!--Column 3-->
-                    <td><c:out value="${taskList}"/></td>               <!--Column 4-->
-                    <td><c:out value="${test}"/></td>                                   <!--Column 5-->
+                    <td colspan="5"> Service List:
+                        <ul><c:out value="${serviceList}"/></ul>
+                    </td>               <!--Column 4-->
+                    <td colspan="5">
+                        <c:if test="${empty myvariable}">
+                            myvariable is empty.
+                        </c:if>
+                        <c:if test="${not empty myvariable}">
+                            myvariable is NOT empty.
+                        </c:if>
+                    </td>                                   <!--Column 5-->
                 </tr>
 
                 <tr>

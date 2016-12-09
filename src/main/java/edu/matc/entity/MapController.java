@@ -14,27 +14,11 @@ import javax.servlet.annotation.*;
 public class MapController extends HttpServlet{
 
     private final Logger logger = Logger.getLogger(this.getClass());
-    String tasks;
-    String nullTasks;
-    List<String> myTaskList;
 
-    public void init() throws ServletException {
+    String nullServices;
+    List<String> myServiceList;
 
-    }
-
-    /**
-    public void getRunningTasks(String myList) {
-
-        if (myList != null) {
-            tasks = myList;
-            //logger.info("Here are the tasks in the Map Controller class: " + tasks);
-        } else {
-            tasks = "Unable to retrieve tasks from server.";
-        }
-
-    }
-     */
-
+    public void init() throws ServletException {}
 
     /**
      *  Handles HTTP GET requests.
@@ -48,25 +32,17 @@ public class MapController extends HttpServlet{
             throws ServletException, IOException {
 
         ServerConnection serverConnection = new ServerConnection();
-        myTaskList = serverConnection.getTaskList();
-        //logger.info("Here are the tasks in the Map Controller class: " + myTaskList);
+        myServiceList = serverConnection.getAllServices();
 
-        if (myTaskList != null) {
-            for (String taskString : myTaskList) {
-                request.setAttribute("taskList", taskString);
-                logger.info("Here are the tasks in the Map Controller class: " + taskString);
-            }
+
+        if (myServiceList != null) {
+            request.setAttribute("serviceList", myServiceList);
         } else {
-            nullTasks = "Unable to retrieve tasks from server.";
-            request.setAttribute("taskList", nullTasks);
+            nullServices= "Unable to retrieve tasks from server.";
+            request.setAttribute("taskList", nullServices);
         }
 
-        request.setAttribute("test", "my test message will work!");
-
-        String url = "admin.jsp";
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+        request.getRequestDispatcher("/admin.jsp").forward(request, response);
     }
 
 }

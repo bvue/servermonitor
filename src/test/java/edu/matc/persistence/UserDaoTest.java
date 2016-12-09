@@ -44,8 +44,8 @@ public class UserDaoTest {
 
     @Test
     public void getUser() throws Exception {
-        User user = dao.getUser(1);
-        String expectedUserValue = "wrong";
+        //User user = dao.getUser(1);
+        //String expectedUserValue = "wrong";
         //This WILL fail but I want to see if it grabs the correct user
         //assertEquals("Request: ", expectedUserValue, user);
     }

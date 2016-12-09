@@ -20,6 +20,7 @@ public class ServerConnection {
     private String username;
     private String password;
     private String host;
+    String command;
     private int port;
     private int exitStatus;
     JSch jsch;
@@ -32,22 +33,12 @@ public class ServerConnection {
     private Utilities utils = new Utilities();
 
 
-    /**
-     * This method will execute the command on the server.
-     * The result will be returned in the form of the list
-     */
-    public List getTaskList() {
+    public List getSpecificService() {
 
-        /**
-        username = "root";
-        password = "java2016";
-        host = "67.205.162.127";
-        port = 22;
-         */
-
+        command = "sudo service atd status";
+        loadProperties();
 
         try {
-
             createJschObjectAndLogIn();
             createExecutionChannelandGetTaskList();
             getInputStreamAndExecuteCommand();
@@ -63,11 +54,44 @@ public class ServerConnection {
             }
 
         } catch (Exception e) {
-            logger.error("Error: " + e);
+            logger.error("Error while getting specific service: " + e);
         }
+        logger.info(result);
+        return result;
+    }
 
-        //mapResponseToControllerClass();
 
+    /**
+     * This method will execute the command on the server.
+     * The result will be returned in the form of the list
+     * This will get all Ubuntu Services
+     */
+    public List getAllServices() {
+
+        command = "service --status-all";
+        loadProperties();
+
+        try {
+
+            createJschObjectAndLogIn();
+            createExecutionChannelandGetTaskList();
+            getInputStreamAndExecuteCommand();
+            getReaderAndReadCommandValue();
+            getExitStatusAndDisconnectSession();
+
+
+            if (exitStatus < 0) {
+                logger.info("Done, but exit status not set!");
+            } else if (exitStatus > 0) {
+                logger.info("Done, but with error!");
+            } else {
+                logger.info("Done!");
+            }
+
+        } catch (Exception e) {
+            logger.error("Error while get all services: " + e);
+        }
+        logger.info(result);
         return result;
     }
 
@@ -81,10 +105,10 @@ public class ServerConnection {
         host = properties.getProperty("host");
         port = Integer.parseInt(properties.getProperty("port"));
 
-        //logger.info("Username: " + username);
-        //logger.info("Password: " + password);
-        //logger.info("Host (aka IP): " + host);
-        //logger.info("Port Number: " + port);
+        logger.info("Username: " + username);
+        logger.info("Password: " + password);
+        logger.info("Host (aka IP): " + host);
+        logger.info("Port Number: " + port);
 
     }
 
@@ -117,7 +141,6 @@ public class ServerConnection {
 
 
     public void createExecutionChannelandGetTaskList() throws JSchException {
-        String command = "ps ux";
 
         //create the excution channel over the session
         channelExec = session.openChannel("exec");
@@ -148,6 +171,8 @@ public class ServerConnection {
         }
     }
 
+
+
     public void getExitStatusAndDisconnectSession() {
         //retrieve the exit status of the remote command corresponding to this channel
         exitStatus = channelExec.getExitStatus();
@@ -157,13 +182,11 @@ public class ServerConnection {
         session.disconnect();
     }
 
-    /**
-    public void mapResponseToControllerClass() {
-        //map this to the controller class and display on JSP page
-        for (String runningTasks : result) {
-            MapController mapResultsToJsp = new MapController();
-            mapResultsToJsp.getRunningTasks(runningTasks);
+
+    public void getPrettyList() {
+        for (String services : result) {
+            logger.info(services);
         }
     }
-     */
+
 }

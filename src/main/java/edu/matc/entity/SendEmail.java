@@ -22,7 +22,6 @@ public class SendEmail {
     private final Logger logger = Logger.getLogger(SendEmail.class);
 
 
-
     public void run() throws MessagingException {
         setup();
         getMailSession();

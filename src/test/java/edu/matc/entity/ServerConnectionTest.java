@@ -13,11 +13,16 @@ public class ServerConnectionTest {
     ServerConnection serverConnection = new ServerConnection();
 
     @Test
-    public void testGetTaskList() throws Exception {
-        serverConnection.getTaskList();
+    public void testGetAllServices() throws Exception {
+        serverConnection.getAllServices();
 
     }
 
+    @Test
+    public void testGetSpecificService() throws Exception {
+        serverConnection.getSpecificService();
+
+    }
 
 
 
