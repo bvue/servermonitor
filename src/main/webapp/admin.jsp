@@ -3,7 +3,9 @@
 <!doctype html>
 <html>
 
-<c:import url="head-tag.jsp" />
+
+<c:import url="head-tag2.jsp" />
+
 
 <body>
 
@@ -11,82 +13,52 @@
     <table class="table table-hover table-expandable table-striped">
         <thead>
         <tr>
-            <th>Country</th>
-            <th>Population</th>
-            <th>Area</th>
-            <th>Official languages</th>
+            <th>Server Name</th>        <!--Column 1-->
+            <th>IP address</th>         <!--Column 2-->
+            <th>Server on/off</th>      <!--Column 3-->
+            <th>Services Running</th>   <!--Column 4-->
+            <th>Memory Used</th>        <!--Column 5-->
         </tr>
         </thead>
+
         <tbody>
         <tr>
-            <td>United States of America</td>
-            <td>306,939,000</td>
-            <td>9,826,630 km2</td>
-            <td>English</td>
+            <td>My First Server</td>
+            <td>67.205.162.127</td>
+            <td><c:out value="${status}"/></td>
+            <td>See Service List below</td>
+            <td>3.5/4.0 GB</td>
         </tr>
         <tr>
-            <td colspan="5"><h4>Additional information</h4>
+            <td colspan="5"><h4>Service List</h4>
                 <ul>
-                    <li><a href="http://en.wikipedia.org/wiki/Usa">USA on Wikipedia</a></li>
-                    <li><a href="http://nationalatlas.gov/">National Atlas of the United States</a></li>
-                    <li><a href="http://www.nationalcenter.org/HistoricalDocuments.html">Historical Documents</a></li>
+                    <li><c:out value="${serviceList}"/></li>
                 </ul></td>
         </tr>
         <tr>
-            <td>United Kingdom </td>
-            <td>61,612,300</td>
-            <td>244,820 km2</td>
-            <td>English</td>
+            <td>My Second Server</td>
+            <td>10.99.255.00</td>
+            <td>Status</td>
+            <td>See Service List Below</td>
+            <td>1.7/4.0 GB</td>
         </tr>
         <tr>
-            <td colspan="5"><h4>Additional information</h4>
+            <td colspan="5"><h4>Service List</h4>
                 <ul>
-                    <li><a href="http://en.wikipedia.org/wiki/United_kingdom">UK on Wikipedia</a></li>
-                    <li><a href="http://www.visitbritain.com/">Official tourist guide to Britain</a></li>
-                    <li><a href="http://www.statistics.gov.uk/StatBase/Product.asp?vlnk=5703">Official Yearbook of the United Kingdom</a></li>
+                    <li>Service List!</li>
                 </ul></td>
         </tr>
         <tr>
-            <td>India</td>
-            <td>1,147,995,904</td>
-            <td>3,287,240 km2</td>
-            <td>Hindi, English</td>
+            <td>My Third Server</td>
+            <td>10.333.22.55</td>
+            <td>Status</td>
+            <td>See Service List Below</td>
+            <td>2.2/4.0 GB</td>
         </tr>
         <tr>
-            <td colspan="5"><h4>Additional information</h4>
+            <td colspan="5"><h4>Service List</h4>
                 <ul>
-                    <li><a href="http://en.wikipedia.org/wiki/India">India on Wikipedia</a></li>
-                    <li><a href="http://india.gov.in/">Government of India</a></li>
-                    <li><a href="http://wikitravel.org/en/India">India travel guide</a></li>
-                </ul></td>
-        </tr>
-        <tr>
-            <td>Canada</td>
-            <td>33,718,000</td>
-            <td>9,984,670 km2</td>
-            <td>English, French</td>
-        </tr>
-        <tr>
-            <td colspan="5"><h4>Additional information</h4>
-                <ul>
-                    <li><a href="http://en.wikipedia.org/wiki/Canada">Canada on Wikipedia</a></li>
-                    <li><a href="http://atlas.gc.ca/site/index.html" >Official
-                        Government of Canada online Atlas of Canada</a></li>
-                    <li><a href="http://wikitravel.org/en/Canada">Canada travel guide</a></li>
-                </ul></td>
-        </tr>
-        <tr>
-            <td>Germany</td>
-            <td>82,060,000</td>
-            <td>357,021 km2</td>
-            <td>German</td>
-        </tr>
-        <tr>
-            <td colspan="5"><h4>Additional information</h4>
-                <ul>
-                    <li><a href="http://en.wikipedia.org/wiki/Germany">Germany on Wikipedia</a></li>
-                    <li><a href="http://www.deutschland.de/home.php?lang=2">Deutschland.de Official Germany portal</a></li>
-                    <li><a href="http://www.cometogermany.com/">Germany Travel Info</a></li>
+                    <li>Really cool info here.</li>
                 </ul></td>
         </tr>
         </tbody>

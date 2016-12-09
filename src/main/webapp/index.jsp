@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 
-<c:import url="head-tag2.jsp" />
+<c:import url="head-tag.jsp" />
 
   <body class="welcome">
 
