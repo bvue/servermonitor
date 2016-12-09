@@ -1,46 +1,25 @@
-body {
-    font: 20px Century Gothic, sans-serif;
-    line-height: 1.8;
-    color: #555555;
-}
-
 .margin {
     margin-bottom: 20px;
-}
-.bg-1 {
-    background-color: #dce8fd; /* light blue */
-    color: #555555;
-    padding-bottom: 30px;
-}
-
-.bg-2 {
-    background-color: #ffffff; /* White */
-    color: #555555;
-    padding-top: 30px;
-    padding-bottom: 30px;
 }
 
 .welcome {
     background-color: #dce8fd; /* light blue */
+    font: 20px Century Gothic, sans-serif;
+    line-height: 1.8;
     color: #555555;
     text-align: center;
     padding-top: 80px;
     font: 30px Century Gothic, sans-serif;
 }
 
-.navbar {
-    letter-spacing: 5px;
-    background-color: #dce8fd; /* light blue */
-}
-.navbar-nav  li a:hover {
-    color: #e828df !important;
-}
+
 img[src="images/server.png"] {
     display: inline;
     margin: auto;
     width: 350px;
     height: 350px;
 }
+
 .login {
     background-color: #dce8fd; /* light blue */
     color: #555555;
@@ -48,10 +27,4 @@ img[src="images/server.png"] {
 .login-container {
     margin: auto;
     padding: 90px;
-}
-
-.innerForm {
-    display: inline;
-    width: 3em;
-    margin: auto;
 }
