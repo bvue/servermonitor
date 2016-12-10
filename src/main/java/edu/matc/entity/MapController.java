@@ -15,8 +15,11 @@ public class MapController extends HttpServlet{
 
     private final Logger logger = Logger.getLogger(this.getClass());
 
-    String nullServices;
-    List<String> myServiceList;
+    private String nullServices;
+    private String nullMemoryValue;
+    private List<String> myServiceList;
+    private List<String> memoryUsage;
+    private ArrayList<String> prettyServiceList = new ArrayList<>();
 
     public void init() throws ServletException {}
 
@@ -32,17 +35,37 @@ public class MapController extends HttpServlet{
             throws ServletException, IOException {
 
         ServerConnection serverConnection = new ServerConnection();
+        ServerConnection serverConnection2 = new ServerConnection();
         myServiceList = serverConnection.getAllServices();
+        memoryUsage = serverConnection2.getMemoryUsage();
+
+
+
+        if (memoryUsage != null) {
+            String test;
+            memoryUsage.get(0);
+            memoryUsage.get(1);
+
+            test = memoryUsage.get(0) + memoryUsage.get(1);
+            request.setAttribute("memory", test);
+
+        } else {
+            nullMemoryValue= "Unable to retrieve memory usage.";
+            request.setAttribute("memory", nullMemoryValue);
+        }
+
 
 
         if (myServiceList != null) {
             request.setAttribute("serviceList", myServiceList);
+
         } else {
             nullServices= "Unable to retrieve tasks from server.";
-            request.setAttribute("taskList", nullServices);
+            request.setAttribute("serviceList", nullServices);
         }
 
         request.getRequestDispatcher("/admin.jsp").forward(request, response);
+
     }
 
 }

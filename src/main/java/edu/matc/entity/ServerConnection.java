@@ -33,6 +33,36 @@ public class ServerConnection {
     private Utilities utils = new Utilities();
 
 
+
+
+    public List getMemoryUsage() {
+
+        command = "free -m";
+        loadProperties();
+
+        try {
+            createJschObjectAndLogIn();
+            createExecutionChannelandGetTaskList();
+            getInputStreamAndExecuteCommand();
+            getReaderAndReadCommandValue();
+            getExitStatusAndDisconnectSession();
+
+            if (exitStatus < 0) {
+                logger.info("Done, but exit status not set!");
+            } else if (exitStatus > 0) {
+                logger.info("Done, but with error!");
+            } else {
+                logger.info("Done!");
+            }
+
+        } catch (Exception e) {
+            logger.error("Error while getting specific service: " + e);
+        }
+        logger.info(result);
+        return result;
+    }
+
+
     public List getSpecificService() {
 
         command = "sudo service atd status";

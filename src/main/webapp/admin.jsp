@@ -10,6 +10,13 @@
 <body>
 
 <div class="container">
+    <form action="${pageContext.request.contextPath}/logout" method="post">
+        <input type="submit" value="Logout" />
+    </form>
+</div>
+
+
+<div class="container">
     <table class="table table-hover table-expandable table-striped">
         <thead>
         <tr>
@@ -26,14 +33,22 @@
             <td>My First Server</td>
             <td>67.205.162.127</td>
             <td><c:out value="${status}"/></td>
-            <td>See Service List below</td>
-            <td>3.5/4.0 GB</td>
+            <td><form action="${pageContext.request.contextPath}/mapcontroller" method="get">
+                <input type="submit" value="Get Service List" />
+            </form></td>
+            <td>See Memory Usage Below</td>
         </tr>
         <tr>
             <td colspan="5"><h4>Service List</h4>
                 <ul>
                     <li><c:out value="${serviceList}"/></li>
-                </ul></td>
+                </ul>
+            </td>
+            <td colspan="5"><h4>Memory Usage</h4>
+                <ul>
+                    <li><c:out value="${memory}"/></li>
+                </ul>
+            </td>
         </tr>
         <tr>
             <td>My Second Server</td>

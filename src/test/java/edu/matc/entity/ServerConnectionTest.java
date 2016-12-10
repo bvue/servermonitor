@@ -24,6 +24,12 @@ public class ServerConnectionTest {
 
     }
 
+    @Test
+    public void testGetMemoryUsage() throws Exception {
+        serverConnection.getMemoryUsage();
+
+    }
+
 
 
 
