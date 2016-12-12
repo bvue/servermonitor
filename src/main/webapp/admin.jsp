@@ -2,84 +2,95 @@
 
 <!doctype html>
 <html>
-
-
 <c:import url="head-tag2.jsp" />
 
+<body id="adminBody">
 
-<body>
+    <div class="container logoutButton">
+        <form action="${pageContext.request.contextPath}/logout" method="post">
+            <label>Welcome, <c:out value="${user}"/>!</label>
+            <input type="submit" value="Logout" />
+        </form>
+    </div>
 
-<div class="container">
-    <form action="${pageContext.request.contextPath}/logout" method="post">
-        <input type="submit" value="Logout" />
-    </form>
-</div>
 
+    <div class="container">
+        <table class="table table-hover table-expandable table-striped">
+            <thead>
+                <tr>
+                    <th>Server Name</th>        <!--Column 1-->
+                    <th>IP address</th>         <!--Column 2-->
+                    <th>Server on/off</th>      <!--Column 3-->
+                    <th>Expand Row for More Information</th>      <!--Column 3-->
+                </tr>
+            </thead>
 
-<div class="container">
-    <table class="table table-hover table-expandable table-striped">
-        <thead>
-        <tr>
-            <th>Server Name</th>        <!--Column 1-->
-            <th>IP address</th>         <!--Column 2-->
-            <th>Server on/off</th>      <!--Column 3-->
-            <th>Services Running</th>   <!--Column 4-->
-            <th>Memory Used</th>        <!--Column 5-->
-        </tr>
-        </thead>
+            <tbody>
+                <tr>
+                    <td>My First Server</td>
+                    <td>67.205.162.127</td>
+                    <td><c:out value="${status}"/></td>
 
-        <tbody>
-        <tr>
-            <td>My First Server</td>
-            <td>67.205.162.127</td>
-            <td><c:out value="${status}"/></td>
-            <td><form action="${pageContext.request.contextPath}/mapcontroller" method="get">
-                <input type="submit" value="Get Service List" />
-            </form></td>
-            <td>See Memory Usage Below</td>
-        </tr>
-        <tr>
-            <td colspan="5"><h4>Service List</h4>
-                <ul>
-                    <li><c:out value="${serviceList}"/></li>
-                </ul>
-            </td>
-            <td colspan="5"><h4>Memory Usage</h4>
-                <ul>
-                    <li><c:out value="${memory}"/></li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>My Second Server</td>
-            <td>10.99.255.00</td>
-            <td>Status</td>
-            <td>See Service List Below</td>
-            <td>1.7/4.0 GB</td>
-        </tr>
-        <tr>
-            <td colspan="5"><h4>Service List</h4>
-                <ul>
-                    <li>Service List!</li>
-                </ul></td>
-        </tr>
-        <tr>
-            <td>My Third Server</td>
-            <td>10.333.22.55</td>
-            <td>Status</td>
-            <td>See Service List Below</td>
-            <td>2.2/4.0 GB</td>
-        </tr>
-        <tr>
-            <td colspan="5"><h4>Service List</h4>
-                <ul>
-                    <li>Really cool info here.</li>
-                </ul></td>
-        </tr>
-        </tbody>
-    </table>
+                </tr>
+                <tr>
+                    <td><h4>Service List</h4>
+                        <ul>
+                            <li>
+                            <c:forEach items="${serviceList}" var="item">
+                                ${item}<br>
+                            </c:forEach>
+                            </li>
+                        </ul>
+                    </td>
+                    <td><h4>Memory Usage</h4>
+                        <ul>
+                            <li>
+                                <c:forEach items="${memory}" var="item">
+                                    ${item}<br>
+                                </c:forEach>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <c:out value="${emailStatus}"/>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>My Second Server</td>
+                    <td>104.236.104.28</td>
+                    <td><c:out value="${status2}"/></td>
 
-</div>
+                </tr>
+                <tr>
+                    <td><h4>Service List</h4>
+                        <ul>
+                            <li>
+                                <c:forEach items="${serviceList2}" var="item">
+                                    ${item}<br>
+                                </c:forEach>
+                            </li>
+                        </ul>
+                    </td>
+                    <td><h4>Memory Usage</h4>
+                        <ul>
+                            <li>
+                                <c:forEach items="${memory2}" var="item">
+                                    ${item}<br>
+                                </c:forEach>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <c:out value="${emailStatus2}"/>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>

@@ -6,10 +6,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-
 import edu.matc.util.*;
 
-import static edu.matc.util.Utilities.*;
 
 
 /**
@@ -19,8 +17,6 @@ public class ServerConnection {
 
     private String username;
     private String password;
-    private String host;
-    String command;
     private int port;
     private int exitStatus;
     JSch jsch;
@@ -30,19 +26,16 @@ public class ServerConnection {
     private BufferedReader reader;
     List<String> result = new ArrayList<String>();
     private final Logger logger = Logger.getLogger(this.getClass());
-    private Utilities utils = new Utilities();
 
 
 
+    public List run(String command, String ipAddress) {
 
-    public List getMemoryUsage() {
-
-        command = "free -m";
         loadProperties();
 
         try {
-            createJschObjectAndLogIn();
-            createExecutionChannelandGetTaskList();
+            createJschObjectAndLogIn(ipAddress);
+            createExecutionChannelandGetTaskList(command);
             getInputStreamAndExecuteCommand();
             getReaderAndReadCommandValue();
             getExitStatusAndDisconnectSession();
@@ -62,68 +55,6 @@ public class ServerConnection {
         return result;
     }
 
-
-    public List getSpecificService() {
-
-        command = "sudo service atd status";
-        loadProperties();
-
-        try {
-            createJschObjectAndLogIn();
-            createExecutionChannelandGetTaskList();
-            getInputStreamAndExecuteCommand();
-            getReaderAndReadCommandValue();
-            getExitStatusAndDisconnectSession();
-
-            if (exitStatus < 0) {
-                logger.info("Done, but exit status not set!");
-            } else if (exitStatus > 0) {
-                logger.info("Done, but with error!");
-            } else {
-                logger.info("Done!");
-            }
-
-        } catch (Exception e) {
-            logger.error("Error while getting specific service: " + e);
-        }
-        logger.info(result);
-        return result;
-    }
-
-
-    /**
-     * This method will execute the command on the server.
-     * The result will be returned in the form of the list
-     * This will get all Ubuntu Services
-     */
-    public List getAllServices() {
-
-        command = "service --status-all";
-        loadProperties();
-
-        try {
-
-            createJschObjectAndLogIn();
-            createExecutionChannelandGetTaskList();
-            getInputStreamAndExecuteCommand();
-            getReaderAndReadCommandValue();
-            getExitStatusAndDisconnectSession();
-
-
-            if (exitStatus < 0) {
-                logger.info("Done, but exit status not set!");
-            } else if (exitStatus > 0) {
-                logger.info("Done, but with error!");
-            } else {
-                logger.info("Done!");
-            }
-
-        } catch (Exception e) {
-            logger.error("Error while get all services: " + e);
-        }
-        logger.info(result);
-        return result;
-    }
 
 
     public void loadProperties() {
@@ -132,13 +63,7 @@ public class ServerConnection {
 
         username = properties.getProperty("username");
         password = properties.getProperty("password");
-        host = properties.getProperty("host");
         port = Integer.parseInt(properties.getProperty("port"));
-
-        logger.info("Username: " + username);
-        logger.info("Password: " + password);
-        logger.info("Host (aka IP): " + host);
-        logger.info("Port Number: " + port);
 
     }
 
@@ -153,15 +78,16 @@ public class ServerConnection {
      * Once the connection is established, you can initiate a new channel.
      * this channel is needed to connect to remotely execution program
      */
-    public void createJschObjectAndLogIn() throws JSchException {
+    public void createJschObjectAndLogIn(String ip) throws JSchException {
 
         logger.info("Username: " + username);
-        logger.info("Host (aka IP): " + host);
+        logger.info("Password: " + password);
+        logger.info("Host (aka IP): " + ip);
         logger.info("Port Number: " + port);
 
         jsch = new JSch();
 
-        session = jsch.getSession(username, host, port);
+        session = jsch.getSession(username, ip, port);
         session.setConfig("StrictHostKeyChecking", "no");
         session.setPassword(password);
         session.connect();
@@ -170,12 +96,12 @@ public class ServerConnection {
     }
 
 
-    public void createExecutionChannelandGetTaskList() throws JSchException {
+    public void createExecutionChannelandGetTaskList(String newCommand) throws JSchException {
 
         //create the excution channel over the session
         channelExec = session.openChannel("exec");
 
-        ((ChannelExec) channelExec).setCommand(command);
+        ((ChannelExec) channelExec).setCommand(newCommand);
         channelExec.setInputStream(null);
         ((ChannelExec) channelExec).setErrStream(System.err);
     }
@@ -210,13 +136,6 @@ public class ServerConnection {
         //Safely disconnect channel and disconnect session. If not done then it may cause resource leak
         channelExec.disconnect();
         session.disconnect();
-    }
-
-
-    public void getPrettyList() {
-        for (String services : result) {
-            logger.info(services);
-        }
     }
 
 }

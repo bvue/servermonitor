@@ -1,9 +1,11 @@
 package edu.matc.entity;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.net.SyslogAppender;
 
 import java.io.*;
 import java.util.*;
+import javax.mail.MessagingException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -19,7 +21,8 @@ public class MapController extends HttpServlet{
     private String nullMemoryValue;
     private List<String> myServiceList;
     private List<String> memoryUsage;
-    private ArrayList<String> prettyServiceList = new ArrayList<>();
+    private List<String> myServiceList2;
+    private List<String> memoryUsage2;
 
     public void init() throws ServletException {}
 
@@ -34,38 +37,80 @@ public class MapController extends HttpServlet{
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        ServerConnection serverConnection = new ServerConnection();
-        ServerConnection serverConnection2 = new ServerConnection();
-        myServiceList = serverConnection.getAllServices();
-        memoryUsage = serverConnection2.getMemoryUsage();
+        SendEmail errorEmail = new SendEmail();
 
 
+        FirstServer getServicesFromFirstServer = new FirstServer();
+        FirstServer getMemoryFromFirstServer = new FirstServer();
+        myServiceList = getServicesFromFirstServer.getAllServices();
+        memoryUsage = getMemoryFromFirstServer.getMemoryUsage();
 
-        if (memoryUsage != null) {
-            String test;
-            memoryUsage.get(0);
-            memoryUsage.get(1);
 
-            test = memoryUsage.get(0) + memoryUsage.get(1);
-            request.setAttribute("memory", test);
-
+        if (!memoryUsage.isEmpty()) {
+            request.setAttribute("memory", memoryUsage);
         } else {
             nullMemoryValue= "Unable to retrieve memory usage.";
             request.setAttribute("memory", nullMemoryValue);
         }
 
-
-
-        if (myServiceList != null) {
+        if (!myServiceList.isEmpty()) {
             request.setAttribute("serviceList", myServiceList);
-
+            request.setAttribute("status", "ON");
         } else {
             nullServices= "Unable to retrieve tasks from server.";
             request.setAttribute("serviceList", nullServices);
+            request.setAttribute("status", "OFF");
+            try {
+                errorEmail.run();
+                logger.info("Email sent to inform user of server being down.");
+                request.setAttribute("emailStatus", "Email Sent to User.");
+            } catch (MessagingException e) {
+                logger.error("Error sending email: " + e);
+                e.printStackTrace();
+                request.setAttribute("emailStatus", "Unable to Send Email to User.");
+            }
         }
 
+
+        SecondServer getService = new SecondServer();
+        SecondServer getMemory = new SecondServer();
+        myServiceList2 = getService.getSpecificService();
+        memoryUsage2 = getMemory.getMemoryUsage();
+
+
+        if (!memoryUsage2.isEmpty()) {
+            request.setAttribute("memory2", memoryUsage2);
+        } else {
+            nullMemoryValue= "Unable to retrieve memory usage.";
+            request.setAttribute("memory2", nullMemoryValue);
+        }
+
+
+        if (!myServiceList2.isEmpty()) {
+            request.setAttribute("serviceList2", myServiceList2);
+            request.setAttribute("status2", "ON");
+        } else {
+            nullServices= "Unable to retrieve tasks from server.";
+            request.setAttribute("serviceList2", nullServices);
+            request.setAttribute("status2", "OFF");
+            try {
+                errorEmail.run();
+                logger.info("Email sent to inform user of server being down.");
+                request.setAttribute("emailStatus2", "Email Sent to User.");
+            } catch (MessagingException e) {
+                logger.error("Error sending email: " + e);
+                e.printStackTrace();
+                request.setAttribute("emailStatus2", "Unable to Send Email to User.");
+            }
+        }
+
+
+        HttpSession session = request.getSession(true);
+        String username = request.getRemoteUser();
+        logger.info("USER LOGGED IN IS: " + username);
+        request.setAttribute("user", username);
+
+
         request.getRequestDispatcher("/admin.jsp").forward(request, response);
-
     }
-
 }

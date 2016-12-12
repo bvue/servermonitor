@@ -20,12 +20,18 @@ public class RegisterUser extends HttpServlet{
     private final Logger log = Logger.getLogger(this.getClass());
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = new User(0, req.getParameter("firstName"), req
-                .getParameter("lastName"), req.getParameter("userName"),
-                req.getParameter("password1"));
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        User user = new User(0, request.getParameter("firstName"), request
+                .getParameter("lastName"), request.getParameter("userName"),
+                request.getParameter("password1"));
         log.debug("Adding User: " + user);
         UserDao dao = new UserDao();
         dao.addUser(user);
+
+        String redirectUrl = "/mapcontroller";
+
+        // Redirect to JSP page
+        response.sendRedirect(redirectUrl);
+
     }
 }

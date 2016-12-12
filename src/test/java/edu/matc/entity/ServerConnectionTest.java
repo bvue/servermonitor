@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.testng.Assert.*;
 
 /**
- * Created by bvue0 on 11/29/2016.
+ * Created by bvue0 on 10/29/2016.
  */
 public class ServerConnectionTest {
 
@@ -13,26 +13,9 @@ public class ServerConnectionTest {
     ServerConnection serverConnection = new ServerConnection();
 
     @Test
-    public void testGetAllServices() throws Exception {
-        serverConnection.getAllServices();
+    public void testRun() throws Exception {
+        serverConnection.run("free -m", "67.205.162.127");
 
     }
-
-    @Test
-    public void testGetSpecificService() throws Exception {
-        serverConnection.getSpecificService();
-
-    }
-
-    @Test
-    public void testGetMemoryUsage() throws Exception {
-        serverConnection.getMemoryUsage();
-
-    }
-
-
-
-
-
 
 }
