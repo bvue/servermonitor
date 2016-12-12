@@ -63,7 +63,7 @@ public class MapController extends HttpServlet{
             try {
                 errorEmail.run();
                 logger.info("Email sent to inform user of server being down.");
-                request.setAttribute("emailStatus", "Email Sent to User.");
+                request.setAttribute("emailStatus", "Email sent to inform user of the server being.");
             } catch (MessagingException e) {
                 logger.error("Error sending email: " + e);
                 e.printStackTrace();
@@ -96,7 +96,7 @@ public class MapController extends HttpServlet{
             try {
                 errorEmail.run();
                 logger.info("Email sent to inform user of server being down.");
-                request.setAttribute("emailStatus2", "Email Sent to User.");
+                request.setAttribute("emailStatus2", "Email sent to inform user of the server being down.");
             } catch (MessagingException e) {
                 logger.error("Error sending email: " + e);
                 e.printStackTrace();

@@ -1,7 +1,6 @@
 package edu.matc.entity;
 
 
-import edu.matc.util.Utilities;
 import org.apache.log4j.Logger;
 
 import java.util.Properties;
@@ -49,8 +48,8 @@ public class SendEmail {
 
         getMailSession = Session.getDefaultInstance(properties, null);
         generateMailMessage = new MimeMessage(getMailSession);
+        //can send multiple emails but I only have one here
         generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("bvue4550@gmail.com"));
-        //generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress("test2@servermonitor.com"));
         generateMailMessage.setSubject("Message From Server Monitor");
         String emailBody = "Your server is down." + "<br><br> Sincerely, <br>CEO Vue";
         generateMailMessage.setContent(emailBody, "text/html");

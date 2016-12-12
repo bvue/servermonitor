@@ -20,7 +20,7 @@
                 <tr>
                     <th>Server Name</th>        <!--Column 1-->
                     <th>IP address</th>         <!--Column 2-->
-                    <th>Server on/off</th>      <!--Column 3-->
+                    <th>Server Status</th>      <!--Column 3-->
                     <th>Expand Row for More Information</th>      <!--Column 3-->
                 </tr>
             </thead>
@@ -52,9 +52,9 @@
                         </ul>
                     </td>
                     <td>
-                        <ul>
+                        <h4>
                             <c:out value="${emailStatus}"/>
-                        </ul>
+                        </h4>
                     </td>
                 </tr>
                 <tr>
@@ -83,9 +83,9 @@
                         </ul>
                     </td>
                     <td>
-                        <ul>
-                            <c:out value="${emailStatus}"/>
-                        </ul>
+                        <h4>
+                            <c:out value="${emailStatus2}"/>
+                        </h4>
                     </td>
                 </tr>
             </tbody>
