@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="css/bootstrap-table-expandable.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="css/mapControllerStyle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/mapControllerStyle.css">
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js"></script>

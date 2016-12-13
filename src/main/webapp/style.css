@@ -9,7 +9,6 @@
     color: #555555;
     text-align: center;
     padding-top: 80px;
-    font: 30px Century Gothic, sans-serif;
 }
 
 
@@ -23,8 +22,24 @@ img[src="images/server.png"] {
 .login {
     background-color: #dce8fd; /* light blue */
     color: #555555;
+    font: 20px Century Gothic, sans-serif;
 }
 .login-container {
+    padding-top: 50px;
+    padding-bottom: 15px;
+}
+
+.newUserContainer {
     margin: auto;
-    padding: 90px;
+    padding: 10px;
+}
+
+p {
+    text-align: center;
+}
+
+
+.loginForm {
+    margin: 0 auto;
+    width: 300px;
 }

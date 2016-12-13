@@ -9,16 +9,16 @@
     <!-- main -->
 
     <div class="container login-container">
-        <form class="form-horizontal format-form" ACTION="j_security_check" METHOD="POST">
+        <form class="form-horizontal format-form loginForm" ACTION="j_security_check" METHOD="POST">
             <div class="form-group innerForm">
-                <label class="col-sm-2 control-label">User Name</label>
-                <div class="col-sm-10">
+                <label>User Name</label>
+                <div>
                     <INPUT TYPE="TEXT" NAME="j_username">
                 </div>
             </div>
             <div class="form-group innerForm">
-                <label class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-10">
+                <label>Password</label>
+                <div>
                     <INPUT TYPE="PASSWORD" NAME="j_password">
                 </div>
             </div>
@@ -30,7 +30,7 @@
         </form>
     </div>
 
-    <div class="container">
+    <div class="container newUserContainer">
         <p>
             Is this your first time here? Click <a href="addUser.jsp">here</a> to register!
         </p>

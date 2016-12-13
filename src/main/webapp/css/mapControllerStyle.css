@@ -1,3 +1,17 @@
-.logoutButton {
+#logoutB {
     padding-bottom: 30px;
+    padding-top: 30px;
+    padding-right: 15px;
+    float: right;
+    font-size: 14px;
+}
+
+#mainTable {
+    clear: left;
+}
+
+body {
+    background-color: #dce8fd; /* light blue */
+    color: #555555;
+    font-family: Century Gothic, sans-serif;
 }

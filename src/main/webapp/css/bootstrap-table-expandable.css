@@ -1,9 +1,10 @@
 table.table-expandable > tbody > tr:nth-child(odd) {
     cursor: pointer;
+    font: 20px Century Gothic, sans-serif;
 }
 
 table.table-expandable.table-hover > tbody > tr:nth-child(even):hover td {
-    background-color: white;
+    font: 20px Century Gothic, sans-serif;
 }
 
 table.table-expandable > tbody > tr div.table-expandable-arrow {
@@ -13,3 +14,4 @@ table.table-expandable > tbody > tr div.table-expandable-arrow {
 table.table-expandable > tbody > tr div.table-expandable-arrow.up {
     background-position:0px 0px;
 }
+
