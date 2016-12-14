@@ -17,6 +17,6 @@ I currently support many servers at my job. It would be very useful to have an a
 * [Application Flow](Design Documents/applicationFlow.md)
 * [Database Design]
 
-### [Project Plan]
+### [Project Presentation](ServerMonitor.pptx)
 
 ### [Development Journal]
