@@ -8,7 +8,10 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- * Created by bvue0 on 11/11/2016.
+ * This class instantiates the ServerConnection class and gets the memory usage and a specific service called "atd"
+ * from the second server.
+ *
+ * @author Bao Vue
  */
 public class SecondServer {
 
@@ -16,7 +19,11 @@ public class SecondServer {
     private List<String> result = new ArrayList<String>();
     private String host = "104.236.104.28";
 
-
+    /**
+     * This runs a command on the server to get the memory usage
+     *
+     * @return result the memory usage
+     */
     public List getMemoryUsage() {
 
         result = newServerConnection.run("free -m", host);
@@ -24,6 +31,11 @@ public class SecondServer {
     }
 
 
+    /**
+     * This runs a command on the server to get a specific service
+     *
+     * @return result the service list
+     */
     public List getSpecificService() {
 
         result = newServerConnection.run("sudo service atd status", host);

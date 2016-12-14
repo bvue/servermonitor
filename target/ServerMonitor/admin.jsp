@@ -7,7 +7,7 @@
 <body>
 
     <div id="logoutB">
-        <form action="${pageContext.request.contextPath}/logout" method="post">
+        <form action="/logout" method="post">
             <label>Welcome, <c:out value="${user}"/>!</label>
             <input type="submit" value="Logout" />
         </form>

@@ -32,7 +32,7 @@
 
     <div class="container newUserContainer">
         <p>
-            Is this your first time here? Click <a href="addUser.jsp">here</a> to register!
+            Is this your first time here? Click <a href="/addUser.jsp">here</a> to register!
         </p>
     </div>
 

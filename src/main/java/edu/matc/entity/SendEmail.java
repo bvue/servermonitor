@@ -19,6 +19,7 @@ public class SendEmail {
     private Session getMailSession;
     private MimeMessage generateMailMessage;
     private final Logger logger = Logger.getLogger(SendEmail.class);
+    private boolean success = false;
 
 
     public void run() throws MessagingException {

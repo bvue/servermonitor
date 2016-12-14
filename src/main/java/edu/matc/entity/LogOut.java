@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by bvue0 on 11/10/2016.
+ * This servlet is used to logout of the application.
+ *
+ * @author Bao Vue
  */
 
 
@@ -16,6 +18,15 @@ import java.io.IOException;
 @WebServlet("/logout")
 public class LogOut extends HttpServlet {
 
+
+    /**
+     *  Handles HTTP POST requests.
+     *
+     *@param  request                   the HttpServletRequest object
+     *@param  response                   the HttpServletResponse object
+     *@exception  ServletException  if there is a Servlet failure
+     *@exception  IOException       if there is an IO failure
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getSession().invalidate();

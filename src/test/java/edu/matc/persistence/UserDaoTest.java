@@ -26,7 +26,8 @@ import static org.junit.Assert.*;
  */
 public class UserDaoTest {
 
-    UserDao dao;
+    private UserDao dao;
+    private int id;
     private Logger logger = org.apache.log4j.Logger.getLogger(this.getClass());
 
     @Before
@@ -56,29 +57,21 @@ public class UserDaoTest {
         int insertedUserId = 0;
         //create user to add
         User user = new User();
-        user.setFirstName("test");
-        user.setLastName("test");
-        user.setUserid("test");
-        user.setPassword("test");
+        user.setFirstName("Mary");
+        user.setLastName("Mary");
+        user.setUserid("MaryMary");
+        user.setPassword("mary");
 
         insertedUserId = dao.addUser(user);
 
         assertTrue(insertedUserId > 0);
-        dao.deleteUser(user.getPersonid());
     }
 
 
     @Test
     public void deleteUser() throws Exception {
-        User user = dao.deleteUser(5);
+        User user = dao.deleteUser(16);
         assertNull(user);
-    }
-
-    @Test
-    public void updateUser() throws Exception {
-        //User user = dao.updateUser();
-
-
     }
 
 

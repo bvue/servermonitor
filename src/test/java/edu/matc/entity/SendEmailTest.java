@@ -12,24 +12,10 @@ public class SendEmailTest {
 
     @Test
     public void testRun() throws Exception {
-        //sendEmail.run();
-        //assertNotNull(sendEmail);
+        sendEmail.run();
+        assertNotNull(sendEmail);
 
     }
 
-    @Test
-    public void testSetup() throws Exception {
-
-    }
-
-    @Test
-    public void testGetMailSession() throws Exception {
-
-    }
-
-    @Test
-    public void testGetSessionAndSendMail() throws Exception {
-
-    }
 
 }

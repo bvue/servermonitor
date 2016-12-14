@@ -9,7 +9,7 @@
 
       <!-- main -->
             <!-- Log in -->
-            <h3 class="margin">Welcome! Please <a href ="mapcontroller">login</a> to continue. </h3>
+            <h3 class="margin">Welcome! Please <a href ="/mapcontroller">login</a> to continue. </h3>
             <img src="images/server.png"  alt="Server" >
 
       <!-- end main -->

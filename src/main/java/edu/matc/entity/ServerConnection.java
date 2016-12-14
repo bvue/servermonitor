@@ -11,8 +11,12 @@ import edu.matc.util.*;
 
 
 /**
- * Created by bvue0 on 10/21/2016.
- */
+ * This class executes the shell script on a remote server
+*
+* @author Bao Vue
+*
+*/
+
 public class ServerConnection {
 
     private String username;
@@ -71,7 +75,6 @@ public class ServerConnection {
 
     /**
      * Create a new Jsch object
-     * This object will execute shell commands or scripts on server
      * Open a new session, with your username, host and port
      * Set the password and call connect.
      * session.connect() opens a new connection to remote SSH server.
@@ -90,12 +93,19 @@ public class ServerConnection {
         session = jsch.getSession(username, ip, port);
         session.setConfig("StrictHostKeyChecking", "no");
         session.setPassword(password);
+        //this is where the connection to the remote server happens
         session.connect();
         logger.info("Connection established.");
 
     }
 
 
+    /**
+     * Create the execution channel over the session
+     *
+     * @param newCommand
+     * @throws JSchException
+     */
     public void createExecutionChannelandGetTaskList(String newCommand) throws JSchException {
 
         //create the excution channel over the session
@@ -106,16 +116,31 @@ public class ServerConnection {
         ((ChannelExec) channelExec).setErrStream(System.err);
     }
 
-    // Gets an InputStream for this channel.
-    // All data arriving in as messages from the remote side can be read from this stream.
-    // Execute the command
+
+
+    /**
+     * Gets an InputStream for this channel.
+     * All data arriving in as messages from the remote side can be read from this stream.
+     * Execute the command
+     *
+     * @throws IOException
+     * @throws JSchException
+     */
     public void getInputStreamAndExecuteCommand() throws IOException, JSchException {
+        //this is the stream with data from remote server
         in = channelExec.getInputStream();
 
+        //Execute the command
         channelExec.connect();
     }
 
 
+    /**
+     * Read the output from the input stream we set above
+     * Read each line from the buffered reader and add it to result list
+     *
+     * @throws IOException
+     */
     public void getReaderAndReadCommandValue() throws IOException {
         // Read the output from the input stream we set above
         reader = new BufferedReader(new InputStreamReader(in));
@@ -128,7 +153,10 @@ public class ServerConnection {
     }
 
 
-
+    /**
+     * Retrieve the exit status of the remote command corresponding to this channel
+     * Safely disconnect channel and disconnect session. If not done then it may cause resource leak
+     */
     public void getExitStatusAndDisconnectSession() {
         //retrieve the exit status of the remote command corresponding to this channel
         exitStatus = channelExec.getExitStatus();

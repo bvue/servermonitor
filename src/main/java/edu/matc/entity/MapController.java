@@ -10,6 +10,11 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
+/**
+ * This servlet is used to populate the table on the admin.jsp page
+ *
+ * @author Bao Vue
+ */
 
 @WebServlet(name = "MapController", urlPatterns = { "/mapcontroller" })
 
