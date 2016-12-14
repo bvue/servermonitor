@@ -15,7 +15,7 @@ I currently support many servers at my job. It would be very useful to have an a
 * [Screen Design login page](images/login.jpg)
 * [Screen Design server monitor page](images/serverMonitor_page.jpg)
 * [Application Flow](Design Documents/applicationFlow.md)
-* [Database Design]
+* [Database Design](Design Documents/database design.docx)
 
 ### [Project Presentation](ServerMonitor.pptx)
 
